@@ -1,0 +1,24 @@
+##.gitignore files.
+##
+.DS_Store
+
+##
+## Xcode Project
+##
+**/*.xcodeproj/*
+!**/*.xcodeproj/project.pbxproj
+!**/*.xcodeproj/default.*
+
+##
+## Xcode Workspace
+##
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedatas
+##
+
+##
+Pods/*
+
+**/*.ipa
+
+ImageCaptureSample/Base.lproj/Main.storyboard
