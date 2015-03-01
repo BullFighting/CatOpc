@@ -11,8 +11,8 @@
 #import "LiveViewController.h"
 #import "ParameterViewController.h"
 #import "RecViewController.h"
-#import "BFKonashi.h"
-#import "ImageProcessing.h"
+//#import "BFKonashi.h"
+//#import "ImageProcessing.h"
 
 @interface LiveViewController () <OLYCameraLiveViewDelegate, OLYCameraPropertyDelegate, OLYCameraRecordingSupportsDelegate>
 
@@ -90,8 +90,8 @@
 	self.shutterSound = shutterSoundID;
 
     //Konashi初期化
-    [BFKonashi initialize];
-    [BFKonashi find];
+//    [BFKonashi initialize];
+//    [BFKonashi find];
 
     //moveBullをカウントする。
     _count = 0;
@@ -960,7 +960,7 @@
     self.imageView.image = nil; // HACK: Force to refresh UIImageView contents.
 	self.imageView.image = image;
 
-    [self moveBull:image];
+    //[self moveBull:image];
 }
 
 - (void)camera:(OLYCamera *)camera didChangeCameraProperty:(NSString *)name
@@ -1005,15 +1005,15 @@
 		}
 	}
 }
-- (void)moveBull:(UIImage *)image{
-    _count++;
-    if(_count%50 == 1){
-        int signalFlag= [ImageProcessing imageJudgment:image];
-
-        //Konashiに送る
-        [BFKonashi pinSend:signalFlag];
-    }
-
-}
-
+//- (void)moveBull:(UIImage *)image{
+//    _count++;
+//    if(_count%50 == 1){
+//        int signalFlag= [ImageProcessing imageJudgment:image];
+//
+//        //Konashiに送る
+//        [BFKonashi pinSend:signalFlag];
+//    }
+//
+//}
+//
 @end
